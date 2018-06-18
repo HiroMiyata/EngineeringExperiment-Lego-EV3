@@ -5,8 +5,7 @@ import jp.ac.kanazawait.ep.mmotoki.abst.AbstMotorDriver;
 import jp.ac.kanazawait.ep.mmotoki.abst.AbstNavigator;
 import lejos.robotics.Color;
 
-public class RightEdgeTracer extends  AbstNavigator {
-
+public class RightEdgeTracer extends AbstNavigator{
 	@Override
 	public void decision(AbstCheckerColorSensor checkerColorSensor, AbstMotorDriver driver) {
 		switch (checkerColorSensor.getColorId()) {
@@ -26,5 +25,3 @@ public class RightEdgeTracer extends  AbstNavigator {
 	}
 
 }
-
-
