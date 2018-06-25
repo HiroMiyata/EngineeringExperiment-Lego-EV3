@@ -23,8 +23,7 @@ public class MiyataCar extends AbstCar {
 	public void run() {
 		this.start();
 		int sen = 0;
-		long time = System.currentTimeMillis();
-		long count = System.currentTimeMillis();
+		int count = 0;
 		while(!Button.ESCAPE.isDown() && this.checkerColorSensor.getColorId() != Color.RED) {
 			
 			if(sen % 2 == 0 ) {
@@ -32,12 +31,12 @@ public class MiyataCar extends AbstCar {
 			} else {
 				this.navigator = new SimpleLeftEdgeTracer();
 			}
-			time = System.currentTimeMillis();
-			if(this.checkerColorSensor.getColorId() == Color.GREEN && count+1000 < time ) {
-				sen++;
-				count = System.currentTimeMillis();
-			}
 			
+			if(this.checkerColorSensor.getColorId() == Color.GREEN && count < 0) {
+				sen++;
+				count = 100;
+			}
+			count--;
 			this.navigator.decision(this.checkerColorSensor, this.driver);
 		}
 		this.stop();

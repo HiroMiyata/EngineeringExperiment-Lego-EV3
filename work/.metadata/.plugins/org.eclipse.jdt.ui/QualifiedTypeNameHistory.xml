@@ -13,4 +13,5 @@
 <fullyQualifiedTypeName name="lejos.robotics.SampleProvider"/>
 <fullyQualifiedTypeName name="lejos.hardware.port.SensorPort"/>
 <fullyQualifiedTypeName name="lejos.hardware.Button"/>
+<fullyQualifiedTypeName name="jp.ac.kanazawait.ep.mmotoki.abst.AbstNavigator"/>
 </qualifiedTypeNameHistroy>
