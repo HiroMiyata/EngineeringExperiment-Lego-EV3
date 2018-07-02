@@ -1,7 +1,0 @@
-package jp.ac.kanazawait.ep.hironorimiyata;
-
-import jp.ac.kanazawait.ep.mmotoki.abst.AbstNavigator;
-
-public abstract class AbstNavigatorMiyata extends AbstNavigator {
-
-}
