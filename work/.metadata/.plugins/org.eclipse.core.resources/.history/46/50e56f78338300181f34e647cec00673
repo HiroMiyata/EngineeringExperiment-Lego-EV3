@@ -25,7 +25,6 @@ public class MiyataCar extends AbstCar {
 		boolean ch =true;
 		boolean colorFirst = false;
 		boolean colorSecond = false;
-		boolean ch1 = true;
 		while(!Button.ESCAPE.isDown() && this.checkerColorSensor.getColorId() != Color.RED) {
 			if(this.checkerColorSensor.getColorId() == Color.GREEN) {
 				colorFirst = true;
@@ -39,24 +38,16 @@ public class MiyataCar extends AbstCar {
 				this.navigator = new SimpleLeftEdgeTracer();
 				ch = true;
 			}
-			this.navigator.decision(this.checkerColorSensor, this.driver);
-			
 			if(this.checkerColorSensor.getColorId() == Color.GREEN) {
 				colorSecond = true;
 			}else {
-				colorSecond = false;
-				
+				colorFirst = false;
+			}
+			if(colorFirst == true && colorFirst != colorSecond) {
+				sel = ch;
 			}
 			
-			if(colorFirst == colorSecond) {
-				if(colorFirst== true&&ch1 == true) {
-					sel = ch;
-					ch1 = false;
-				}
-				
-			} else if(colorFirst== false) {
-				ch1=true;
-			}
+			this.navigator.decision(this.checkerColorSensor, this.driver);
 		}
 		this.stop();
 	}

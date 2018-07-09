@@ -49,12 +49,12 @@ public class MiyataCar extends AbstCar {
 			}
 			
 			if(colorFirst == colorSecond) {
-				if(colorFirst== true&&ch1 == true) {
+				if(ch1 == true) {
 					sel = ch;
 					ch1 = false;
 				}
 				
-			} else if(colorFirst== false) {
+			} else {
 				ch1=true;
 			}
 		}
